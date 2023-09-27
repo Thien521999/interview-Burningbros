@@ -44,13 +44,11 @@ export const Home = () => {
         const { category } = item
 
         if (!categoryMap[category]) {
-          // Nếu category chưa tồn tại trong categoryMap, thêm nó vào
           categoryMap[category] = {
             category,
             item: [item]
           }
         } else {
-          // Nếu category đã tồn tại trong categoryMap, thêm phần tử vào mảng item
           categoryMap[category].item.push(item)
         }
       }
