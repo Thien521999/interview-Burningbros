@@ -39,7 +39,6 @@ export const Content = ({ content, isLoading }: IContentProps) => {
     }
   }, [isUpdateSuccess, products])
 
-  console.log('newContent', newContent)
   return (
     <>
       <div className="flex flex-nowrap gap-4 items-center text-[20px] text-[#353C49] leading-7 font-semibold mb-[24px]">

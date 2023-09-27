@@ -53,7 +53,7 @@ export const Products = ({ products, category, handleGetIdUpdate }: IProductProp
 
   const handleToggle = () => {
     setIsClicked((prev) => !prev)
-    // handleReset()
+    handleReset()
   }
 
   const handleSudmitEdit = async (values: productUpdate) => {
@@ -62,8 +62,6 @@ export const Products = ({ products, category, handleGetIdUpdate }: IProductProp
 
     update.mutate({ id: idx, title })
     handleGetIdUpdate(category, values.PRODUCTS)
-
-    console.log('values', values)
 
     queryClient.setQueryData('productUpdate', values.PRODUCTS)
   }
@@ -109,7 +107,7 @@ export const Products = ({ products, category, handleGetIdUpdate }: IProductProp
                 ? 'hover:bg-[#f8f8f9] hover:border hover:border-[#D1B8FA] hover:rounded-lg box-border cursor-pointer'
                 : 'px-4 py-3 hover:border hover:border-[#D1B8FA] rounded-lg box-border cursor-pointer'
             }
-            // onClick={handleReset}
+            onClick={handleReset}
           >
             <div
               ref={contentEl}
@@ -137,7 +135,6 @@ export const Products = ({ products, category, handleGetIdUpdate }: IProductProp
                   <div
                     className="text-[16px] leading-5 font-semibold text-[#353C49] p-2 hover:bg-[#f3f4f6] hover:rounded-[8px]"
                     onClick={(e) => handleClickTitle(e, item.id, item.idx)}
-                    onBlur={() => handleReset}
                   >
                     {item.title}
                   </div>
